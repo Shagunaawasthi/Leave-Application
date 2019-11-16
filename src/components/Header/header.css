@@ -1,4 +1,4 @@
-.header {
+/*.header {
     padding-top: 1%;
     padding-bottom: 1%;
     background-color: rgb(0, 33, 66)!important;
@@ -7,4 +7,158 @@
   #mait-logo {
     width: 80px;
     height:80px;
+  }*/
+  body {
+    background-color: #ccc;
+    /* background-color: white; */
+  }
+  
+  .header {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: rgb(0, 33, 66);
+    margin-bottom: 5%;
+  }
+  
+  .searchbar {
+    position: fixed;
+    top: 10vw;
+    margin-bottom: 1%;
+    padding: 2% 25%;
+    width: 90%;
+    z-index: 2;
+  }
+  
+  #mait-logo {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  #page-title {
+    font-family: 'Merriweather Sans', sans-serif;
+    display: inline-block;
+    color: white;
+    font-size: 2vw;
+    vertical-align: middle;
+  }
+  
+  #page-subtitle {
+    font-family: 'Merriweather Sans', sans-serif;
+    display: inline-block;
+    color: white;
+    /* font-size: 2vw; */
+    vertical-align: middle;
+  }
+  
+  .home {
+    /* opacity: 0.5; */
+    background-color: white;
+    /* border: 1px solid #cfcfcf; */
+    box-shadow: 3px 3px 3px #aaa;
+    border-radius: 5px;
+    padding-top: 0.8%;
+    margin-bottom: 5%;
+  }
+
+  
+  /* .card {
+    margin: 2% 0%;
+    text-align: center;
+  } */
+  
+  
+  /* .card {
+    margin: 1% 10%;
+  } */
+  
+  /* .card:hover {
+    box-shadow: 2.5px 2.5px #aaa;
+    cursor: pointer;
+  } */
+  
+  
+  
+  
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+
+  
+  .year-block {
+    margin: 3%;
+    display: inline-block;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 2.5em;
+    border-radius: 100%;
+    background-color: #012340;
+    width: 250px;
+    height: 250px;
+    color: white;
+  }
+  
+  .year {
+    font-size: 400%;
+  }
+  
+  .year-block a {
+    color: white;
+  }
+  
+  .list-elements {
+    margin-top: 10%;
+  }
+  
+  
+  
+  
+  
+  #mait-logo {
+    width: 80px;
+    height:80px;
+  }
+  
+  .expansion {
+    font-size: 15px;
+  }
+  
+  .expansion:hover {
+    /* background-color: rgb(244,244,244); */
+    cursor: pointer;
+  }
+  
+  .home-bg {
+    background-color: #eee;
+  }
+  
+  input {
+    text-align: center;
+  }
+  
+  /* .table-div {
+    background-color: white;
+    border-radius: 5px;
+  } */
+  
+  
+ 
+  
+  
+  /* .overview.col-6, .hod-message.col-6 {
+    padding: 15px 10px;
+  } */
+  
+  
+  .no-resp {
+    background-color: white;
+    border-radius: 5px;
+    height: 30%;
+    padding: 50px;
+  }
+  
+  .no-resp-text {
+    /* margin-top: 15%; */
+    text-align: center;
   }

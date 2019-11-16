@@ -13,7 +13,7 @@ class App extends Component {
 		return (
 			<AuthContext.Provider value={true}>
 			<Router>
-				
+				<Header/>
 				<div className="App">
 				<ul className="links">
 				
@@ -22,9 +22,10 @@ class App extends Component {
 				</li>
 				<li><Link to="/user">User Page</Link></li>
 				</ul>
-				<Route exact path="/" component={Leaves}/>
+				<Route exact path="/" component={Login}/>
 				<PrivateRoute path="/user" component={Cards}/>
 			</div>
+			<Footer/>
 			</Router>
 			</AuthContext.Provider>
 

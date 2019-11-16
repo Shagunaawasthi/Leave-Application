@@ -1,5 +1,5 @@
 body{
-    background: radial-gradient(#e5e5e5 ,#ffffff,#e5e5e5) ;
+    background: #fff;
 }
 
 .card:hover{
@@ -14,6 +14,7 @@ body{
 }
 .container-fluid .row{
     padding-top: 6rem;
+    padding-bottom:6rem ;
 }
 .overflow{
     overflow: hidden;

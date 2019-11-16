@@ -4,6 +4,7 @@
     max-width: 400px;
     padding: 40px 40px;
     background: #fff;
+    outline: 0.89px solid rgb(0,33,66);
 }
     
 /*.App{

@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
 import Card from './cardUI';
 import img1 from '../../assets/aboutUs.jpg';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+
 class Cards extends Component{
     render(){
     return(
+        <div>
+            
         <div className="card-border-top">
         <div className="container-fluid d-flex justify-content-center">
             <div className="row">
@@ -23,6 +27,8 @@ class Cards extends Component{
             </div>
 
         </div>
+        </div>
+        
         </div>
     )
     }

@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Component } from "react";
 import './leaves-style.css';
+import Header from '../../components/Header/HeaderComponent';
+import Footer from '../../components/Footer/FooterComponent';
 //import img1 from'../assets/aboutUs.jpg';
-const Leaves=prop=>{
+class Leaves extends Component{
+
+    render(){
     return(
-        <div className="leave">        
+        
+        <div className="leave"> 
+        <Header/>       
         <div className="card text-center shadow container ">
            
             <div className="card-body text-dark">
@@ -12,15 +18,18 @@ const Leaves=prop=>{
                 <h5 >Total Leaves: 30</h5>
                 <input type="date"   placeholder="Date" ></input>
                 </p>
-                <button href="#" className="btn btn-outline-success">Claim </button>
+                <button href="#" className="btn btn-outline-success">Claim</button>
 
             </div>
 
         </div>
+        <Footer/>
         </div>
+        
 
       
     );
-
+    }
 }
+
 export default Leaves;
