@@ -1,12 +1,15 @@
 body{
     background: #fff;
 }
-
+.col-lg-4{
+    max-width: 100%;
+}
 .card:hover{
     box-shadow: 5px 10px 20px 1px rgb(0,0,0,0.253)!important;
 }
 .card-body{
     padding: 3rem 0 !important;
+    width:100%;
 }
 .card-text{
     font-size: 1.45rem;

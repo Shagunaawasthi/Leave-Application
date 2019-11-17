@@ -78,7 +78,7 @@ class Login extends Component {
 
         return (
             <div className="Login">
-                <Row>
+                <Row className="justify-content-center">
                     <form onSubmit={this.login}>
                         <FormGroup controlId="email" validationState={ formSubmitted ? (errors.email ? 'error' : 'success') : null }>
                             <ControlLabel>Email</ControlLabel>

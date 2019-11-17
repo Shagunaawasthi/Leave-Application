@@ -8,10 +8,7 @@
     width: 80px;
     height:80px;
   }*/
-  body {
-    background-color: #ccc;
-    /* background-color: white; */
-  }
+ 
   
   .header {
     padding-top: 1%;
@@ -30,8 +27,9 @@
   }
   
   #mait-logo {
-    width: 100%;
+    width: 90%;
     margin-left: 0;
+    margin-right: 10px;
   }
   
   #page-title {
@@ -40,6 +38,12 @@
     color: white;
     font-size: 2vw;
     vertical-align: middle;
+  }
+  #log-out{
+    font-family: 'Merriweather Sans', sans-serif;
+    
+    vertical-align: middle;
+    
   }
   
   #page-subtitle {

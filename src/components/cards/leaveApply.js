@@ -8,11 +8,11 @@ class Leaves extends Component{
     render(){
     return(
         
-        <div className="leave"> 
-        <Header/>       
-        <div className="card text-center shadow container ">
+        <div className="leave" > 
            
-            <div className="card-body text-dark">
+        <div className="card text-center shadow container" >
+           
+            <div className="card-body text-dark" >
              <h4 className="card-title">Leave A</h4>
                 <p className="card-text text-secondary">
                 <h5 >Total Leaves: 30</h5>
@@ -23,7 +23,7 @@ class Leaves extends Component{
             </div>
 
         </div>
-        <Footer/>
+       
         </div>
         
 
