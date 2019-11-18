@@ -4,6 +4,7 @@ import PrivateRoute from './PrivateRoute';
 import Login from './components/login/Login';
 import Cards from './components/cards/cards.jsx';
 import Signup from './components/signup/signup';
+import Leave from './components/modal-leave/leave-modal';
 import Leaves from './components/cards/leaveApply';
 import Header from './components/Header/HeaderComponent';
 import Footer from './components/Footer/FooterComponent';

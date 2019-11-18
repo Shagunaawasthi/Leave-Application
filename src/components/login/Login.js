@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router';
 import { Row, FormGroup, FormControl, ControlLabel, Button, HelpBlock } from 'react-bootstrap';
 import './login.css';
 import { isEmail, isEmpty, isLength, isContainWhiteSpace } from 'shared/validator';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 class Login extends Component {
 
@@ -12,10 +14,23 @@ class Login extends Component {
             formData: {},
             errors: {},
             formSubmitted: false, 
-            loading: false
+            loading: false,
+            redirect: false
         }
     }
-
+   
+        
+      
+      setRedirect = () => {
+        this.setState({
+          redirect: true
+        })
+      }
+      renderRedirect = () => {
+        if (this.state.redirect) {
+          return <Redirect to='/user' />
+        }
+      }
     handleInputChange = (event) => {
         const target = event.target;
         const value = target.value;
@@ -54,8 +69,29 @@ class Login extends Component {
             return errors;
         }
     }
-
-    login = (e) => {
+    onSubmit = (event) => {
+        event.preventDefault();
+        fetch('/api/authenticate', {
+          method: 'POST',
+          body: JSON.stringify(this.state),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(res => {
+          if (res.status === 200) {
+            this.props.history.push('/user');
+          } else {
+            const error = new Error(res.error);
+            throw error;
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          alert('Error logging in please try again');
+        });
+      }
+   /* login = (e) => {
 
         e.preventDefault();
 
@@ -70,7 +106,7 @@ class Login extends Component {
                 formSubmitted: true
             });
         }
-    }
+    }*/
 
     render() {
 
@@ -94,7 +130,10 @@ class Login extends Component {
                             <HelpBlock>{errors.password}</HelpBlock>
                         }
                         </FormGroup>
-                      <a href="">  <Button type="submit" bsStyle="primary">Sign-In</Button></a>
+                        
+                        {this.renderRedirect()}
+ 
+                      <a href="">  <Button type="submit" bsStyle="primary"  onClick={this.setRedirect} onSubmit={this.onSubmit}>Sign-In</Button></a>
                     </form>
                 </Row>
             </div>
