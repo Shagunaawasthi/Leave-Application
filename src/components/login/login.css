@@ -4,14 +4,19 @@
     max-width: 400px;
     padding: 40px 40px;
     background: #fff;
-    outline: 0.89px solid rgb(0,33,66);
+    border: 5px solid rgb(2, 59, 117);
     text-align: center;
-    
-    
+    border-radius: 5px;
+   
 }
-.Login:hover{
+.Login.form-control{
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+  }
+/*.Login:hover{
     box-shadow: 5px 10px 20px 1px rgb(0,0,0,0.253)!important;
-}
+}*/
     
 
 /*.App{

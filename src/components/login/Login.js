@@ -113,18 +113,18 @@ class Login extends Component {
         const { errors, formSubmitted } = this.state;
 
         return (
-            <div className="Login">
+            <div className="Login" >
                 <Row className="justify-content-center">
-                    <form onSubmit={this.login}>
+                    <form onSubmit={this.login}  >
                         <FormGroup controlId="email" validationState={ formSubmitted ? (errors.email ? 'error' : 'success') : null }>
-                            <ControlLabel>Email</ControlLabel>
+                           
                             <FormControl type="text" name="email" placeholder="Enter your email" onChange={this.handleInputChange} />
                         { errors.email &&
                             <HelpBlock>{errors.email}</HelpBlock>
                         }
                         </FormGroup>
                         <FormGroup controlId="password" validationState={ formSubmitted ? (errors.password ? 'error' : 'success') : null }>
-                            <ControlLabel>Password</ControlLabel>
+                          
                             <FormControl type="password" name="password" placeholder="Enter your password" onChange={this.handleInputChange} />
                         { errors.password &&
                             <HelpBlock>{errors.password}</HelpBlock>
@@ -133,7 +133,7 @@ class Login extends Component {
                         
                         {this.renderRedirect()}
  
-                      <a href="">  <Button type="submit" bsStyle="primary"  onClick={this.setRedirect} onSubmit={this.onSubmit}>Sign-In</Button></a>
+                      <a href="">  <Button type="submit" bsStyle="primary"  onClick={this.setRedirect} onSubmit={this.onSubmit}>Login-In</Button></a>
                     </form>
                 </Row>
             </div>

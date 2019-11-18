@@ -10,17 +10,17 @@ class Signup extends Component {
                 <Row className="justify-content-center">
                     <form >
                         <FormGroup controlId="email">
-                            <ControlLabel>Email</ControlLabel>
+                           
                             <FormControl type="text" name="email" placeholder="Enter your email"  />
                        
                         </FormGroup>
                         <FormGroup controlId="password" >
-                            <ControlLabel>Password</ControlLabel>
+                            
                             <FormControl type="password" name="password" placeholder="Enter your password" />
                         
                         </FormGroup>
                         <FormGroup controlId="password" >
-                            <ControlLabel>Confirm Password</ControlLabel>
+                            
                             <FormControl type="password" name="password" placeholder="Confirm your password" />
                         
                         </FormGroup>
