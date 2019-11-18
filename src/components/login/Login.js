@@ -28,7 +28,7 @@ class Login extends Component {
       }
       renderRedirect = () => {
         if (this.state.redirect) {
-          return <Redirect to='/user' />
+          return <Redirect to='/staff/view' />
         }
       }
     handleInputChange = (event) => {
@@ -80,7 +80,7 @@ class Login extends Component {
         })
         .then(res => {
           if (res.status === 200) {
-            this.props.history.push('/user');
+            this.props.history.push('/login/staff');
           } else {
             const error = new Error(res.error);
             throw error;

@@ -18,7 +18,7 @@ const Card=prop=>{
                 <h5>Total Leaves Left:</h5>
                    4
                 </p>
-                <button href="" className="btn btn-outline-success"><Link to="/leave">Apply</Link> </button>
+                <button href="" className="btn btn-outline-success"><Link to="/staff/leave">Apply</Link> </button>
                
             </div>
 
