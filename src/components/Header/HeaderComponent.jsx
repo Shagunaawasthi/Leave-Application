@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './header.css'
-import Logo from '../../assets/mait-logo.png'
+import Logo from '../../assets/MAIT_LOGO.png'
 
 // import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ function NavigationBar(){
     <div className="navigation-bar row align-items-center">
       <div className="col-12 col-md-8">
         <div className="row align-items-center">
-          <img id="mait-logo" src={Logo} alt="MAIT logo" />
+          <img id="mait-logo" src={Logo} alt="MAIT Logo" />
           <a href="http://it.mait.ac.in/" className="pl-2">
             <h2 id="page-title">Department of<br/>Information Technology</h2>
           </a>
