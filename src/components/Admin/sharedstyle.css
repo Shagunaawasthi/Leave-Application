@@ -1,0 +1,14 @@
+.Signup{
+    margin: 0 auto;
+    margin-top: 6rem;
+    max-width: 400px;
+    padding: 40px 40px;
+    background: #fff;
+    border: 5px solid rgb(2,59,117);
+    text-align: center;
+    border-radius: 5px;  
+  }
+  .Admin{
+      display: flex;
+      justify-content:center;
+  }

@@ -8,7 +8,11 @@ import Leave from './components/modal-leave/leave-modal';
 import Leaves from './components/cards/leaveApply';
 import Header from './components/Header/HeaderComponent';
 import Footer from './components/Footer/FooterComponent';
+import AdminLogin from './components/Admin/adminLogin';
 import { AuthContext } from './context/auth';
+import AdminProfile from './components/Admin/adminProfile';
+import setLeaves from './components/Admin/setLeaves';
+import setStaff from './components/Admin/setStaff';
 
 class App extends Component {
 	render() {
@@ -21,14 +25,19 @@ class App extends Component {
 				<ul className="links">
 				
 				<li className="L1">
-					<Link to="/">Sign Up</Link>
+					<Link to="/login/staff">Faculty Login</Link>
 				</li>
-				<li className="L2"><Link to="/user">User Page</Link></li>
+				<li className="L2"><Link to="/login/admin">Admin Login</Link></li>
 				</ul>
-				<Route exact path="/" component={Signup}/>
-				<Route exact path="/login" component={Login}/>
-				<Route exact path="/leave" component={Leaves}/>
-				<PrivateRoute path="/user" component={Cards}/>
+				<Route exact path="/login/staff" component={Login}/>
+				<Route exact path="/login/admin" component={AdminLogin}/>
+				<Route exact path="/admin" component={AdminProfile}/>
+				<Route exact path="/admin/setleaves" component={setLeaves}/>
+				<Route exact path="/admin/addfaculty" component={setStaff}/>
+				<Route exact path="/admin/viewfaculty" component={AdminProfile}/>
+				
+				<Route exact path="/staff/leave" component={Leaves}/>
+				<PrivateRoute path="/staff/view" component={Cards}/>
 			</div>
 			
 			</Router>
