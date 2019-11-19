@@ -20,16 +20,18 @@ class AdminLogin extends Component {
    
         
       
-      setRedirect = () => {
+    setRedirect = () => {
         this.setState({
-          redirect: true
+            redirect: true
         })
-      }
-      renderRedirect = () => {
+    }
+
+    renderRedirect = () => {
         if (this.state.redirect) {
-          return <Redirect to='/admin' />
+            return <Redirect to='/admin' />
         }
-      }
+    }
+
     handleInputChange = (event) => {
         const target = event.target;
         const value = target.value;
@@ -68,28 +70,45 @@ class AdminLogin extends Component {
             return errors;
         }
     }
+    // onSubmit = (event) => {
+    //     event.preventDefault();
+    //     fetch('/api/authenticate', {
+    //       method: 'POST',
+    //       body: JSON.stringify(this.state),
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       }
+    //     })
+    //     .then(res => {
+    //       if (res.status === 200) {
+    //         this.props.history.push('/user');
+    //       } else {
+    //         const error = new Error(res.error);
+    //         throw error;
+    //       }
+    //     })
+    //     .catch(err => {
+    //       console.error(err);
+    //       alert('Error logging in please try again');
+    //     });
+    //   }
+
     onSubmit = (event) => {
         event.preventDefault();
-        fetch('/api/authenticate', {
-          method: 'POST',
-          body: JSON.stringify(this.state),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(res => {
-          if (res.status === 200) {
-            this.props.history.push('/user');
-          } else {
-            const error = new Error(res.error);
-            throw error;
-          }
-        })
-        .catch(err => {
-          console.error(err);
-          alert('Error logging in please try again');
-        });
+        let errors = this.validateLoginForm();
+
+        if(errors === true){
+            // alert("You are successfully signed in...");
+            // window.location.reload()
+            
+        } else {
+            this.setState({
+                errors: errors,
+                formSubmitted: true
+            });
+        }
       }
+
    /* login = (e) => {
 
         e.preventDefault();
@@ -117,7 +136,7 @@ class AdminLogin extends Component {
                     <h1>Administrator</h1>
                 </Row>
                 <Row className="justify-content-center">
-                    <form onSubmit={this.login}  >
+                    <form>
                         <FormGroup controlId="email" validationState={ formSubmitted ? (errors.email ? 'error' : 'success') : null }>
                            
                             <FormControl type="text" name="email" placeholder="Enter your email" onChange={this.handleInputChange} />
@@ -135,7 +154,7 @@ class AdminLogin extends Component {
                         
                         {this.renderRedirect()}
  
-                        <Button type="submit" bsStyle="primary"  onSubmit={this.onSubmit}>Login</Button>
+                        <Button type="submit" bsStyle="primary"  onClick={this.onSubmit}>Login</Button>
                     </form>
                 </Row>
                 <Row className="justify-content-center mt-4">

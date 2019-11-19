@@ -5,7 +5,7 @@ import './login.css';
 import { isEmail, isEmpty, isLength, isContainWhiteSpace } from 'shared/validator';
 // import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-let users = require("../../data.json").users;
+// let users = require("../../data.json").users;
 class Login extends Component {
 
     constructor(props) {
@@ -99,10 +99,8 @@ class Login extends Component {
     //   }
 
     onSubmit = (event) => {
-        // event.preventDefault();
-        console.log(event);
-
-
+        event.preventDefault();
+        // console.log(event);
         let errors = this.validateLoginForm();
 
         if(errors === true){
