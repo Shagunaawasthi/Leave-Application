@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router';
-import { Row, FormGroup, FormControl, ControlLabel, Button, HelpBlock } from 'react-bootstrap';
+import { Row, FormGroup, FormControl, Button, HelpBlock } from 'react-bootstrap';
 import './AdminLogin.css';
 import { isEmail, isEmpty, isLength, isContainWhiteSpace } from 'shared/validator';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class AdminLogin extends Component {
 
@@ -114,18 +113,21 @@ class AdminLogin extends Component {
 
         return (
             <div className="Login" >
+                <Row className="justify-content-center mb-3">
+                    <h1>Administrator</h1>
+                </Row>
                 <Row className="justify-content-center">
                     <form onSubmit={this.login}  >
                         <FormGroup controlId="email" validationState={ formSubmitted ? (errors.email ? 'error' : 'success') : null }>
                            
-                            <FormControl type="text" name="email" placeholder="Enter the email" onChange={this.handleInputChange} />
+                            <FormControl type="text" name="email" placeholder="Enter your email" onChange={this.handleInputChange} />
                         { errors.email &&
                             <HelpBlock>{errors.email}</HelpBlock>
                         }
                         </FormGroup>
                         <FormGroup controlId="password" validationState={ formSubmitted ? (errors.password ? 'error' : 'success') : null }>
                           
-                            <FormControl type="password" name="password" placeholder="Enter the password" onChange={this.handleInputChange} />
+                            <FormControl type="password" name="password" placeholder="Enter your password" onChange={this.handleInputChange} />
                         { errors.password &&
                             <HelpBlock>{errors.password}</HelpBlock>
                         }
@@ -133,8 +135,11 @@ class AdminLogin extends Component {
                         
                         {this.renderRedirect()}
  
-                      <a href="">  <Button type="submit" bsStyle="primary"  onClick={this.setRedirect} onSubmit={this.onSubmit}>Login-In</Button></a>
+                        <Button type="submit" bsStyle="primary"  onSubmit={this.onSubmit}>Login</Button>
                     </form>
+                </Row>
+                <Row className="justify-content-center mt-4">
+                    <Link to="/login/staff">Login as staff</Link>
                 </Row>
             </div>
         )
