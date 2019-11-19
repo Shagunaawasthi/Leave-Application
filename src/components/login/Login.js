@@ -5,7 +5,7 @@ import './login.css';
 import { isEmail, isEmpty, isLength, isContainWhiteSpace } from 'shared/validator';
 // import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-// let users = require("../../data.json").users;
+let users = require("../../data.json").users;
 class Login extends Component {
 
     constructor(props) {
@@ -75,38 +75,29 @@ class Login extends Component {
         }
     }
     
-    // onSubmit = (event) => {
-    //     event.preventDefault();
-    //     fetch('/api/authenticate', {
-    //       method: 'POST',
-    //       body: JSON.stringify(this.state),
-    //       headers: {
-    //         'Content-Type': 'application/json'
-    //       }
-    //     })
-    //     .then(res => {
-    //       if (res.status === 200) {
-    //         this.props.history.push('/login/staff');
-    //       } else {
-    //         const error = new Error(res.error);
-    //         throw error;
-    //       }
-    //     })
-    //     .catch(err => {
-    //       console.error(err);
-    //       alert('Error logging in please try again');
-    //     });
-    //   }
-
     onSubmit = (event) => {
         event.preventDefault();
-        // console.log(event);
         let errors = this.validateLoginForm();
-
         if(errors === true){
-            // alert("You are successfully signed in...");
-            // window.location.reload()
-
+            fetch('/api/authenticate', {
+                method: 'POST',
+                body: JSON.stringify(this.state),
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              })
+              .then(res => {
+                if (res.status === 200) {
+                  this.props.history.push('/user');
+                } else {
+                  const error = new Error(res.error);
+                  throw error;
+                }
+              })
+              .catch(err => {
+                console.error(err);
+                alert('Error logging in please try again');
+              });
         } else {
             this.setState({
                 errors: errors,
@@ -114,6 +105,23 @@ class Login extends Component {
             });
         }
     }
+
+    // onSubmit = (event) => {
+    //     event.preventDefault();
+    //     // console.log(event);
+    //     let errors = this.validateLoginForm();
+
+    //     if(errors === true){
+    //         // alert("You are successfully signed in...");
+    //         // window.location.reload()
+
+    //     } else {
+    //         this.setState({
+    //             errors: errors,
+    //             formSubmitted: true
+    //         });
+    //     }
+    // }
 
    /* login = (e) => {
 

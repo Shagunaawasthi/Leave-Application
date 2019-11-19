@@ -1,4 +1,4 @@
-{"users":[
+export let users = [
   {
     "name" : "ABC",
     "email" : "admin@mait.ac.in",
@@ -8,4 +8,4 @@
     "modified_on" : "",
     "admin_access" : "1"
   }
-]}
+]

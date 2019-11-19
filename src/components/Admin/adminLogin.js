@@ -4,6 +4,8 @@ import './AdminLogin.css';
 import { isEmail, isEmpty, isLength, isContainWhiteSpace } from 'shared/validator';
 import { Link, Redirect } from 'react-router-dom';
 
+let users = require("../../data.js").users;
+
 class AdminLogin extends Component {
 
     constructor(props) {
@@ -70,44 +72,54 @@ class AdminLogin extends Component {
             return errors;
         }
     }
-    // onSubmit = (event) => {
-    //     event.preventDefault();
-    //     fetch('/api/authenticate', {
-    //       method: 'POST',
-    //       body: JSON.stringify(this.state),
-    //       headers: {
-    //         'Content-Type': 'application/json'
-    //       }
-    //     })
-    //     .then(res => {
-    //       if (res.status === 200) {
-    //         this.props.history.push('/user');
-    //       } else {
-    //         const error = new Error(res.error);
-    //         throw error;
-    //       }
-    //     })
-    //     .catch(err => {
-    //       console.error(err);
-    //       alert('Error logging in please try again');
-    //     });
-    //   }
 
     onSubmit = (event) => {
         event.preventDefault();
         let errors = this.validateLoginForm();
-
         if(errors === true){
-            // alert("You are successfully signed in...");
-            // window.location.reload()
-            
+            fetch('/api/authenticate', {
+                method: 'POST',
+                body: JSON.stringify(this.state),
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              })
+              .then(res => {
+                if (res.status === 200) {
+                  this.props.history.push('/user');
+                } else {
+                  const error = new Error(res.error);
+                  throw error;
+                }
+              })
+              .catch(err => {
+                console.error(err);
+                alert('Error logging in please try again');
+              });
         } else {
             this.setState({
                 errors: errors,
                 formSubmitted: true
             });
         }
-      }
+    }
+
+    // onSubmit = (event) => {
+    //     event.preventDefault();
+    //     let errors = this.validateLoginForm();
+    //     // console.log(this.state.formData);
+    //     if(errors === true){
+    //         let formdata = this.state.formData;
+    //         users[0].email = formdata.email;
+    //         console.log(users);
+            
+    //     } else {
+    //         this.setState({
+    //             errors: errors,
+    //             formSubmitted: true
+    //         });
+    //     }
+    //   }
 
    /* login = (e) => {
 
